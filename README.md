@@ -14,10 +14,12 @@ Docker向けの環境構築およびDocker実行環境でアプリ実行を行�
 １.デスクトップで右クリックし、選択肢「ターミナルを開く」をクリックする。  
 ２.Ubuntuコマンドプロンプトを開く。（デフォルトrootログインされている）  
 ３．以下のようなコマンドが表示されたら、ログイン成功。
->root@ubuntu:~$  
+>root@ubuntu:~#  
 
-4.権限を持ってない場合、当時ユーザをグループに追加    
->sudo usermod -aG docker $USER  
+4.ユーザ作成および、sudo権限付与。作成したユーザに切り替える。  
+>adduser user_name  
+>gpasswd -a user_name sudo  
+>su- user_name
 
 システム更新
 >$ sudo apt-get update  
@@ -59,7 +61,10 @@ Ubuntuのバージョン情報確認
 > $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null  
 
 4.登録済みキーペアであるかを確認  
->$ cat /etc/apt/sources.list.d/docker.list|grep docker  
+>$ cat /etc/apt/sources.list.d/docker.list|grep docker
+
+5.当時ユーザをグループに追加    
+>sudo usermod -aG docker $USER  
 
 ### Dockerインストール  
 １．パッケージリストを更新（これで新しい設定が読み込まれます）  
