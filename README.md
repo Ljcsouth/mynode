@@ -37,7 +37,7 @@ Ubuntuのバージョン情報確認
 1.Docker用の情報ライブラリーキーペアを追加  
 >$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo apt-key add -  
 
-2.Docker情報をリポジトリに登録する   
+2.Dockerのキーペア情報をリポジトリに登録する   
 >$ sudo add-apt-repository \  
 > "deb [arch=amd64] https://download.docker.com/linux/ubuntu \  
 > $(lsb_release -cs) \  
@@ -55,7 +55,7 @@ Ubuntuのバージョン情報確認
 2.GPG鍵をダウンロードして指定場所に保存    
 >$ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /etc/apt/keyrings/docker.gpg  
 
-3.Docker情報をリポジトリに登録する  
+3.Docker用のキーペア情報をリポジトリに登録する  
 >echo \  
 > "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.gpg] https://download.docker.com/linux/ubuntu \  
 > $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null  
@@ -90,7 +90,7 @@ githubでmynodeプロジェクトを新規作成(mynode.git)
 
 #### githubから作成したプロジェクトをダウンロードする  
 ※githubのユーザ名とパスワードは求められます。  
-$ git clone https://github.com/Ljcsouth/mynode.git
+>$ git clone https://github.com/Ljcsouth/mynode.git
 
 #### Node.js LTSの鏡像の取得  
 >$ sudo docker image pull node:lts  
