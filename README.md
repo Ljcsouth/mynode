@@ -14,17 +14,17 @@ Docker向けの環境構築およびDocker実行環境でアプリ実行を行�
 １.デスクトップで右クリックし、選択肢「ターミナルを開く」をクリックする。  
 ２.Ubuntuコマンドプロンプトを開く。（デフォルトrootログインされている）  
 ３．以下のようなコマンドが表示されたら、ログイン成功。
->admin@ubuntu:~$
-4.権限を持ってない場合、当時ユーザをグループに追加  
+>admin@ubuntu:~$  
+
+4.権限を持ってない場合、当時ユーザをグループに追加    
 >sudo usermod -aG docker $USER  
 
-### Dockerインストール
 システム更新
 >$ sudo apt-get update  
 >$ sudo apt-get upgrade  
 >$ sudo apt-get autoremove  
 
-システム更新システムの依頼パッケージをインストール(Docker公式の署名鍵をシステムに登録する)
+システムの依頼パッケージをインストール(Docker公式の署名鍵をシステムに登録する)
 >$ sudo apt-get -y install apt-transport-https ca-certificates curl gnupg-agent software-properties-common
 
 Ubuntuのバージョン情報確認
@@ -61,7 +61,7 @@ Ubuntuのバージョン情報確認
 4.登録済みキーペアであるかを確認  
 >$ cat /etc/apt/sources.list.d/docker.list|grep docker  
 
-Dockerインストール
+### Dockerインストール  
 １．パッケージリストを更新（これで新しい設定が読み込まれます）  
 >$ sudo apt-get update  
 
@@ -89,8 +89,9 @@ $ git clone https://github.com/Ljcsouth/mynode.git
 
 #### Node.js LTSの鏡像の取得  
 >$ sudo docker image pull node:lts  
+
 テスト用のJSを作成  
->$ nano hello.js  
+>$ nano hello.js    
 
 JS内容：  
 >console.log("I love this game.")  
@@ -121,14 +122,15 @@ I love this game.
 
 ### 最後  
 gitHubへリソースコミット  
->git add.
->git commit -m "mynode_v01"
-pushするときに、ユーザ名とパスワード(gitHubで発行された臨時用のパスワード)が求められる。
+>git add.  
+>git commit -m "mynode_v01"  
+
+pushするときに、ユーザ名とパスワード(gitHubで発行された臨時用のパスワード)が求められる。  
 >git push
 
 Tag作成　　
 >git tag v01  
->git push origin v01
+>git push origin v01  
 
 
 
