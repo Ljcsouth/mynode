@@ -101,7 +101,7 @@ githubでmynodeプロジェクトを新規作成(mynode.git)
 JS内容：  
 >console.log("I love this game.")  
 
-Docker向けのshellファイルを作成　　
+Dockerファイルを作成　　
 >$ nano Dockerfile
 
 Dockerfile内容：
@@ -124,6 +124,9 @@ Dockerfile内容：
 
 実行結果：  
 I love this game.  
+
+Dokcer Hubにリソースをプッシュする
+>$ sudo docker push ljcsouth/mynode:v01
 
 ### 最後  
 gitHubへリソースコミット  
